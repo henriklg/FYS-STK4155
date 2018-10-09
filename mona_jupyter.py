@@ -48,7 +48,7 @@ def convertData(x_d, y_d, z_d):
 
 
 def plotSurface(x_d, y_d, z_d):
-    # Kode for å plotte overflater, basert på oppgaveteksten
+    # Kode for å #plotte overflater, basert på oppgaveteksten
     fig = plt.figure()
     ax = fig.gca(projection='3d')
 
@@ -85,8 +85,8 @@ def XYsklearn(degreePoly, X,Y):
 
     # Oppretter meshgrid av datasettet
     x_d, y_d, z_d = FindData(X , Y)
-    # Plotter z_d med meshgrid av x og y
-    plotSurface(x_d, y_d, z_d)
+    # #plotter z_d med meshgrid av x og y
+    #plotSurface(x_d, y_d, z_d)
 
     # Konverterer meshgrid til kolonnevektorer
     x, y, z, m = convertData(x_d, y_d, z_d)
@@ -297,7 +297,7 @@ def test2(x,y,z, model):
     #plt.scatter(test[:,0], test[:,1], test[:,2], label='Data points')
     #error = np.mean(np.mean((test[:,2] - zpredict_test)**2, axis=1, keepdims=True) )
 
-    #plt.plot(test[:,0], test[:,2], label='f(x)')
+    #plt.#plot(test[:,0], test[:,2], label='f(x)')
     #plt.scatter(x_test, y_test, label='Data points')
     #plt.scatter(x_test, np.mean(y_pred, axis=1), label='Pred')
 
@@ -364,7 +364,7 @@ def test(x,y,z, model):
     #plt.scatter(test[:,0], test[:,1], test[:,2], label='Data points')
     #error = np.mean(np.mean((test[:,2] - zpredict_test)**2, axis=1, keepdims=True) )
 
-    #plt.plot(test[:,0], test[:,2], label='f(x)')
+    #plt.#plot(test[:,0], test[:,2], label='f(x)')
     #plt.scatter(x_test, y_test, label='Data points')
     #plt.scatter(x_test, np.mean(y_pred, axis=1), label='Pred')
 
@@ -577,7 +577,7 @@ def k_fold_Lasso(x,y,z, k, Lasso_alpha):
         Lasso_multi = np.c_[train[:,0], train[:,1]]
         Lasso_multi_test = np.c_[test[:,0],test[:,1]]
 
-        poly2 = PolynomialFeatures(degree=10)
+        poly2 = PolynomialFeatures(degree=5)
 
         # Transformerer variabelmatrisen
         Lasso_sklearn = poly2.fit_transform(Lasso_multi)
@@ -613,7 +613,7 @@ def k_fold_Lasso(x,y,z, k, Lasso_alpha):
         #y_d =test[:,1].reshape(nry,nry)
         #z_d = zpredict_test_L.reshape(nr,nr)
 
-        #plotSurface(x_d, y_d, z_d)
+        ##plotSurface(x_d, y_d, z_d)
 
         part_mse = 0
         nr = 0
@@ -631,10 +631,8 @@ def k_fold_Lasso(x,y,z, k, Lasso_alpha):
 #Henter meshgrid verdier av datasettet
 x_d_OLS, y_d_OLS, z_d_OLS = FindData(X, Y)
 print(x_d_OLS.shape)
-# Plotter ekte overflate
-print("DETTE ER OLS (KANSKJE)")
-plotSurface(x_d_OLS, y_d_OLS, z_d_OLS)
-exit(1)
+# #plotter ekte overflate
+##plotSurface(x_d_OLS, y_d_OLS, z_d_OLS)
 
 #Konverterer meshgrideverdiene til kolonnevektorer
 x_OLS,y_OLS,z_OLS,m_OLS = convertData(x_d_OLS, y_d_OLS, z_d_OLS)
@@ -669,8 +667,8 @@ print(zpredict_OLS_mesh.shape)
 print(n)
 
 
-# Plotter forventet overflate
-plotSurface(x_d_OLS, y_d_OLS, zpredict_OLS_mesh)
+# #plotter forventet overflate
+#Surface(x_d_OLS, y_d_OLS, zpredict_OLS_mesh)
 
 
 # ### Confidence Intervall med z_predict:
@@ -792,7 +790,7 @@ print(varianceModel)
 
 x_d_Ridge, y_d_Ridge, z_d_Ridge = FindData(X , Y)
 print(x_d_Ridge.shape)
-plotSurface(x_d_Ridge, y_d_Ridge, z_d_Ridge)
+#plotSurface(x_d_Ridge, y_d_Ridge, z_d_Ridge)
 
 
 # In[36]:
@@ -815,8 +813,8 @@ print(zpredict_Ridge_mesh.shape)
 # In[38]:
 
 
-# Plot the predicted surface.
-plotSurface(x_d_Ridge, y_d_Ridge, zpredict_Ridge_mesh)
+# #plot the predicted surface.
+#plotSurface(x_d_Ridge, y_d_Ridge, zpredict_Ridge_mesh)
 
 
 # In[39]:
@@ -889,8 +887,8 @@ print(varianceModel)
 # Oppretter meshgrid av datasettet
 x_d_Lasso, y_d_Lasso, z_d_Lasso = FindData(X , Y)
 print(x_d_Lasso.shape)
-# Plotter z_d med meshgrid av x og y
-plotSurface(x_d_Lasso, y_d_Lasso, z_d_Lasso)
+# #plotter z_d med meshgrid av x og y
+#plotSurface(x_d_Lasso, y_d_Lasso, z_d_Lasso)
 
 
 # In[46]:
@@ -933,11 +931,11 @@ print("Lasso Intercept: ", lasso.intercept_)
 
 # In[49]:
 
-
-# Plotter forventet overflate med Lasso modellen
+print ("LALLLLALASSSSOOOO")
+# #plotter forventet overflate med Lasso modellen
 predict_mesh_Lasso = predictLasso.reshape(n,n)
 plotSurface(x_d_Lasso, y_d_Lasso, predict_mesh_Lasso)
-
+exit(1)
 
 # Kommentar til Lasso:
 # Ser at ved å endre på alpha til veldig liten så begynner Lasso og ligne mer og mer på originale surfacen.
@@ -998,7 +996,7 @@ plt.show()
 import numpy as np
 #from scipy.misc import imread
 from imageio import imread
-import matplotlib.pyplot as plt
+import matplotlib.py#plot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
@@ -1012,11 +1010,11 @@ def surface_plot(surface,title, surface1=None):
 
     fig = plt.figure()
     if surface1 is not None:
-        ax = fig.add_subplot(1,2,1,projection='3d')
+        ax = fig.add_sub#plot(1,2,1,projection='3d')
         ax.plot_surface(X,Y,surface,cmap=cm.viridis,linewidth=0)
         plt.title(title)
 
-        ax = fig.add_subplot(1,2,2,projection='3d')
+        ax = fig.add_sub#plot(1,2,2,projection='3d')
         ax.plot_surface(X,Y,surface1,cmap=cm.viridis,linewidth=0)
         plt.title(title)
     else:
@@ -1104,7 +1102,7 @@ if __name__ == '__main__':
         print("variance: %g"%var)
         print("bias: %g\n"%bias)
 
-        surface_plot(fitted_patch,'Fitted terrain surface',patch)
+        surface_#plot(fitted_patch,'Fitted terrain surface',patch)
 
     # Perform fit over the whole dataset
     print("The whole dataset")
