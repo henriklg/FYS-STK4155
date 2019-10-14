@@ -21,3 +21,5 @@ Project 1 in FYS-STK4155 Anvendt dataanalyse og maskinlæring, Fall of 2018 by B
  - give a critical discussion of the methods, judge which is best. 
 
 ### d) Introducing real data
+Example of real terrain data
+![Terrain example](figures/terrain_data.png)
