@@ -1,6 +1,6 @@
 # Polynomial Regression
 
-Project 1 in FYS-STK4155 Anvendt dataanalyse og maskinlæring, Fall of 2018 by Betina Høyer Wester, Mona Heggen and Henrik Gjestang. More details may be found in the [project report](https://github.com/henriklg/ising_model_analysis/blob/master/FYS_STK4155_project2.pdf).
+Project 1 in FYS-STK4155 Applied data analysis and machine learning. Course taken fall of 2018 by Betina Høyer Wester, Mona Heggen and Henrik Gjestang. More details may be found in the [project report](https://github.com/henriklg/ising_model_analysis/blob/master/FYS_STK4155_project2.pdf).
 
 *Goal*: Fit polynomials to the two-dimensional Franke's function, defined for x,y in [0, 1].
 ![Frankes Function](figures/franke_function.png)
